@@ -1,3 +1,4 @@
+import { DummyService } from '@angular-oauth2-oidc-oauthservice-di-in-library/dev-lib';
 import { Component, OnInit } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
 
@@ -7,7 +8,7 @@ import { OAuthService } from 'angular-oauth2-oidc';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  constructor(public oAuthService: OAuthService) {
+  constructor(public oAuthService: OAuthService, public dummyService: DummyService) {
     // https://github.com/manfredsteyer/angular-oauth2-oidc#logging-in
     this.oAuthService.configure({
       // Url of the Identity Provider
@@ -47,5 +48,9 @@ export class AppComponent implements OnInit {
 
   logout() {
     this.oAuthService.logOut();
+  }
+
+  test() {
+    this.dummyService.getIdentityClaims();
   }
 }

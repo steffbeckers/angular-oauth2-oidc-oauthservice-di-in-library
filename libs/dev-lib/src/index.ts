@@ -1,1 +1,1 @@
-export * from './lib/dev-lib.module';
+export { DummyService } from './lib/dummy/dummy.service';

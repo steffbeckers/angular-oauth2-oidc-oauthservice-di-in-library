@@ -4,7 +4,13 @@
 
 <ng-template #authorized>
   <button (click)="logout()" type="button">Logout</button>
+
+  <p>Claims from oAuthService direct from app:</p>
   <pre>
 {{ oAuthService.getIdentityClaims() | json }}
+  </pre>
+
+  <pre>
+{{ dummyService.getIdentityClaims() | json }}
   </pre>
 </ng-template>
