@@ -1,1 +1,10 @@
-<angular-oauth2-oidc-oauthservice-di-in-library-nx-welcome></angular-oauth2-oidc-oauthservice-di-in-library-nx-welcome>
+<ng-container *ngIf="!oAuthService.hasValidAccessToken(); else authorized">
+  <button (click)="login()" type="button">Login</button>
+</ng-container>
+
+<ng-template #authorized>
+  <button (click)="logout()" type="button">Logout</button>
+  <pre>
+{{ oAuthService.getIdentityClaims() | json }}
+  </pre>
+</ng-template>
