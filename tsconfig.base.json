@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@angular-oauth2-oidc-oauthservice-di-in-library/dev-lib": [
+        "libs/dev-lib/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
